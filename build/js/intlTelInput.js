@@ -91,7 +91,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
             // we cannot just test screen size as some smartphones/website meta tags will report desktop resolutions
             // Note: for some reason jasmine fucks up if you put this in the main Plugin function with the rest of these declarations
             // Note: to target Android Mobiles (and not Tablets), we must find "Android" and "Mobile"
-            this.isMobile = /Android.+Mobile|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            this.isMobile = false;
             // we return these deferred objects from the _init() call so they can be watched, and then we resolve them when each specific request returns
             // Note: again, jasmine had a spazz when I put these in the Plugin function
             this.autoCountryDeferred = new $.Deferred();
@@ -191,39 +191,39 @@ https://github.com/Bluefieldscom/intl-tel-input.git
             this.telInput.attr("autocomplete", "off");
             // containers (mostly for positioning)
             this.telInput.wrap($("<div>", {
-                "class": "intl-tel-input"
+                class: "intl-tel-input"
             }));
             this.flagsContainer = $("<div>", {
-                "class": "flag-container"
+                class: "flag-container"
             }).insertBefore(this.telInput);
             // currently selected flag (displayed to left of input)
             var selectedFlag = $("<div>", {
                 // make element focusable and tab naviagable
                 tabindex: "0",
-                "class": "selected-flag"
+                class: "selected-flag"
             }).appendTo(this.flagsContainer);
             this.selectedFlagInner = $("<div>", {
-                "class": "iti-flag"
+                class: "iti-flag"
             }).appendTo(selectedFlag);
             // CSS triangle
             $("<div>", {
-                "class": "arrow"
+                class: "arrow"
             }).appendTo(selectedFlag);
             // country list
             // mobile is just a native select element
             // desktop is a proper list containing: preferred countries, then divider, then all countries
             if (this.isMobile) {
                 this.countryList = $("<select>", {
-                    "class": "iti-mobile-select"
+                    class: "iti-mobile-select"
                 }).appendTo(this.flagsContainer);
             } else {
                 this.countryList = $("<ul>", {
-                    "class": "country-list hide"
+                    class: "country-list hide"
                 });
                 if (this.preferredCountries.length && !this.isMobile) {
                     this._appendListItems(this.preferredCountries, "preferred");
                     $("<li>", {
-                        "class": "divider"
+                        class: "divider"
                     }).appendTo(this.countryList);
                 }
             }
@@ -234,7 +234,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
                 // create dropdownContainer markup
                 if (this.options.dropdownContainer) {
                     this.dropdown = $("<div>", {
-                        "class": "intl-tel-input iti-container"
+                        class: "intl-tel-input iti-container"
                     }).append(this.countryList);
                 } else {
                     this.countryList.appendTo(this.flagsContainer);
