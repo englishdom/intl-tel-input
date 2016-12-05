@@ -985,7 +985,7 @@ Plugin.prototype = {
       countryCode = "";
     } else if (!number || number == "+") {
       // empty, or just a plus, so default
-      countryCode = this.options.defaultCountry.iso2;
+      countryCode = "";
     }
 
     if (countryCode !== null) {
