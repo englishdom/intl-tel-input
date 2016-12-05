@@ -827,7 +827,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
                 countryCode = "";
             } else if (!number || number == "+") {
                 // empty, or just a plus, so default
-                countryCode = this.options.defaultCountry.iso2;
+                countryCode = "";
             }
             if (countryCode !== null) {
                 this._selectFlag(countryCode, updateDefault);
