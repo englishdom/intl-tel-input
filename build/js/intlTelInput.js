@@ -62,7 +62,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
         CMD1: 91,
         // Chrome
         CMD2: 224
-    }, windowLoaded = false;
+    }, windowLoaded = window.env && window.env.edJsLoaded;
     // keep track of if the window.load event has fired as impossible to check after the fact
     $(window).load(function() {
         windowLoaded = true;
