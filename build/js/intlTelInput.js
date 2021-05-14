@@ -61,7 +61,6 @@
         TAB: 9
     };
 
-    $.fn[pluginName].windowLoaded = window.env && window.env.edJsLoaded;
     // keep track of if the window.load event has fired as impossible to check after the fact
     $(window).on("load", function() {
         // UPDATE: use a public static field so we can fudge it in the tests
@@ -1032,6 +1031,8 @@
             return returns !== undefined ? returns : this;
         }
     };
+
+    $.fn[pluginName].windowLoaded = window.env && window.env.edJsLoaded;
     /********************
  *  STATIC METHODS
  ********************/
