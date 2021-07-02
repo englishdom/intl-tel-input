@@ -64,7 +64,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
         CMD2: 224
     }, windowLoaded = window.env && window.env.edJsLoaded;
     // keep track of if the window.load event has fired as impossible to check after the fact
-    $(window).load(function() {
+    $(window).on('load', function() {
         windowLoaded = true;
     });
     function Plugin(element, options) {
