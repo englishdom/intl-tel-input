@@ -354,7 +354,7 @@ https://github.com/Bluefieldscom/intl-tel-input.git
                     this.loadUtils();
                 } else {
                     // wait until the load event so we don't block any other requests e.g. the flags image
-                    $(window).load(function() {
+                    $(window).on('load', function() {
                         that.loadUtils();
                     });
                 }
